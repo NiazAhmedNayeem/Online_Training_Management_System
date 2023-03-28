@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>Admin Login</title>
+    <title>Teacher Login</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
     <link rel="stylesheet" href="{{'/'}}admin/auth/style.css">
 
@@ -13,10 +13,11 @@
     <div id="login-box">
         <div class="logo">
             <img src="http://placehold.it/100x100?text=DD" class="img img-responsive img-circle center-block"/>
-            <h1 class="logo-caption"><span class="tweak">Admin</span>Login</h1>
+            <h1 class="logo-caption"><span class="tweak">Teacher</span>Login</h1>
+            <h5 class="text-center text-primary">{{Session::get('message')}}</h5>
         </div><!-- /.logo -->
         <div class="controls">
-            <form action="{{route('login')}}" method="POST">
+            <form action="{{route('teacher.login')}}" method="POST">
                 @csrf
                 <input type="email" name="email" placeholder="Email" class="form-control" />
                 <input type="password" name="password" placeholder="Password" class="form-control" />

@@ -5,6 +5,7 @@ use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TeacherAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ use App\Http\Controllers\TeacherController;
 
 Route::get('/', [WebsiteController::class, 'index'])->name('website.home');
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+Route::middleware(['login:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -38,3 +39,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 
 });
+
+Route::get('/teacher/login', [TeacherAuthController::class, 'index'])->name('teacher.login');
+Route::post('/teacher/login', [TeacherAuthController::class, 'login'])->name('teacher.login');
+
+Route::get('/teacher/dashboard', [TeacherAuthController::class, 'dashboard'])->name('teacher.dashboard');
