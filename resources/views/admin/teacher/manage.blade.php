@@ -33,9 +33,13 @@
                                         <a href="{{route('edit.teacher', ['id' => $teacher->id])}}" class="btn btn-outline-success">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="" class="btn btn-outline-danger" >
-                                            <i class="fa fa-trash"></i>
-                                        </a>
+                                        <form action="{{route('delete.teacher', ['id' => $teacher->id])}}" method="POST" >
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
+
                                     </td>
                                 </tr>
                             @endforeach

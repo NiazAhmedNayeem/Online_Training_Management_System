@@ -29,5 +29,9 @@ class TeacherController extends Controller
         Teacher::updateTeacher($request, $id);
         return redirect('/manage-teacher')->with('message', 'Teacher update successfully.');
     }
-
+    public function delete($id)
+    {
+        Teacher::deleteTeacher($id);
+        return redirect('/manage-teacher')->with('message', 'Teacher delete successfully.');
+    }
 }
