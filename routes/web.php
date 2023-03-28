@@ -43,5 +43,9 @@ Route::middleware(['login:sanctum',config('jetstream.auth_session'),'verified'])
 Route::get('/teacher/login', [TeacherAuthController::class, 'index'])->name('teacher.login');
 Route::post('/teacher/login', [TeacherAuthController::class, 'login'])->name('teacher.login');
 
+Route::middleware(['teacher.auth'])->group(function () {
+
 Route::get('/teacher/dashboard', [TeacherAuthController::class, 'dashboard'])->name('teacher.dashboard');
 Route::get('/teacher/logout', [TeacherAuthController::class, 'logout'])->name('teacher.logout');
+
+});

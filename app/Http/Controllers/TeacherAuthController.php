@@ -44,6 +44,8 @@ class TeacherAuthController extends Controller
     }
     public function logout()
     {
+        Session::forgate('teacher_id');
+        Session::forgate('teacher_name');
         return redirect('/teacher/login');
     }
 }
