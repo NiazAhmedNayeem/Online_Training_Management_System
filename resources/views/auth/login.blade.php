@@ -1,133 +1,36 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-
-    <meta charset="utf-8" />
-    <title>Login | Skote - Responsive Bootstrap 4 Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{'/'}}admin/assets/images/favicon.ico">
-
-    <!-- Bootstrap Css -->
-    <link href="{{'/'}}admin/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <!-- Icons Css -->
-    <link href="{{'/'}}admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
-    <link href="{{'/'}}admin/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="{{'/'}}admin/auth/style.css">
 
 </head>
-
 <body>
-<div class="home-btn d-none d-sm-block">
-    <a href="index.html" class="text-dark"><i class="fas fa-home h2"></i></a>
-</div>
-<div class="account-pages my-5 pt-sm-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6 col-xl-5">
-                <div class="card overflow-hidden">
-                    <div class="bg-soft-primary">
-                        <div class="row">
-                            <div class="col-7">
-                                <div class="text-primary p-4">
-                                    <h5 class="text-primary">Welcome Back !</h5>
-                                    <p>Sign in to continue to Skote.</p>
-                                </div>
-                            </div>
-                            <div class="col-5 align-self-end">
-                                <img src="{{'/'}}admin/assets/images/profile-img.png" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div>
-                            <a href="index.html">
-                                <div class="avatar-md profile-user-wid mb-4">
-                                            <span class="avatar-title rounded-circle bg-light">
-                                                <img src="{{'/'}}admin/assets/images/logo.svg" alt="" class="rounded-circle" height="34">
-                                            </span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="p-2">
-                            <form class="form-horizontal" action="{{route('login')}}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="username">Email</label>
-                                    <input type="text" class="form-control" id="username" name="email" placeholder="Enter username">
-                                </div>
+<!-- partial:index.partial.html -->
+<div class="container">
+    <div id="login-box">
+        <div class="logo">
+            <img src="http://placehold.it/100x100?text=DD" class="img img-responsive img-circle center-block"/>
+            <h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
+        </div><!-- /.logo -->
+        <div class="controls">
+            <form action="{{route('login')}}" method="POST">
+                @csrf
+                <input type="email" name="email" placeholder="Email" class="form-control" />
+                <input type="password" name="password" placeholder="Password" class="form-control" />
+                <button type="submit" class="btn btn-default btn-block btn-custom">Login</button>
+            </form>
 
-                                <div class="form-group">
-                                    <label for="userpassword">Password</label>
-                                    <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">
-                                </div>
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                    <label class="custom-control-label" for="customControlInline">Remember me</label>
-                                </div>
-
-                                <div class="mt-3">
-                                    <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In</button>
-                                </div>
-
-
-
-                                <div class="mt-4 text-center">
-                                    <h5 class="font-size-14 mb-3">Sign in with</h5>
-
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary">
-                                                <i class="mdi mdi-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="javascript::void()" class="social-list-item bg-info text-white border-info">
-                                                <i class="mdi mdi-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="javascript::void()" class="social-list-item bg-danger text-white border-danger">
-                                                <i class="mdi mdi-google"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="mt-4 text-center">
-                                    <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Forgot your password?</a>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="mt-5 text-center">
-
-                    <div>
-                        <p>Don't have an account ? <a href="auth-register.html" class="font-weight-medium text-primary"> Signup now </a> </p>
-                        <p>© 2020 Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
 </div>
+<div id="particles-js"></div>
+<!-- partial -->
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'></script>
+<script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
+<script  src="{{'/'}}admin/auth//script.js"></script>
 
-<!-- JAVASCRIPT -->
-<script src="{{'/'}}admin/assets/libs/jquery/jquery.min.js"></script>
-<script src="{{'/'}}admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="{{'/'}}admin/assets/libs/metismenu/metisMenu.min.js"></script>
-<script src="{{'/'}}admin/assets/libs/simplebar/simplebar.min.js"></script>
-<script src="{{'/'}}admin/assets/libs/node-waves/waves.min.js"></script>
-
-<!-- App js -->
-<script src="{{'/'}}admin/assets/js/app.js"></script>
 </body>
-
-<!-- Mirrored from themesbrand.com/skote/layouts/vertical/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:08:04 GMT -->
 </html>
