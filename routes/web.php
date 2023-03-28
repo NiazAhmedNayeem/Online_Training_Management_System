@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,12 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/add-admin', [AdminAuthController::class, 'index'])->name('add.admin');
     Route::post('/create-admin', [AdminAuthController::class, 'create'])->name('create.admin');
     Route::get('/manage-admin', [AdminAuthController::class, 'manage'])->name('admin.manage');
+
+
+
+    Route::get('/teacher', [TeacherController::class, 'index'])->name('teacher');
+    Route::post('/create-teacher', [TeacherController::class, 'create'])->name('create.teacher');
+    Route::get('/manage-teacher', [TeacherController::class, 'manage'])->name('manage.teacher');
+
+
 });
