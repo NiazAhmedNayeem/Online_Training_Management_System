@@ -52,16 +52,16 @@
                             </a>
                         </div>
                         <div class="p-2">
-                            <form class="form-horizontal" action="https://themesbrand.com/skote/layouts/vertical/index.html">
-
+                            <form class="form-horizontal" action="{{route('login')}}" method="POST">
+                                @csrf
                                 <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                    <label for="username">Email</label>
+                                    <input type="text" class="form-control" id="username" name="email" placeholder="Enter username">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="userpassword">Password</label>
-                                    <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                    <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
