@@ -42,4 +42,8 @@ class TeacherAuthController extends Controller
     {
         return view('teacher.dashboard.index');
     }
+    public function logout()
+    {
+        return redirect('/teacher/login');
+    }
 }
