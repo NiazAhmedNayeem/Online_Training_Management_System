@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,8 @@ Route::get('/', [WebsiteController::class, 'index'])->name('website.home');
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/add-admin', [AdminAuthController::class, 'index'])->name('add.admin');
+    Route::post('/create-admin', [AdminAuthController::class, 'create'])->name('create.admin');
+    Route::get('/manage-admin', [AdminAuthController::class, 'manage'])->name('admin.manage');
 });

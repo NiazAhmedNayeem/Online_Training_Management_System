@@ -63,8 +63,8 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="#">Add User</a>
-                            <a class="nav-link" href="">Manage User</a>
+                            <a class="nav-link" href="{{route('add.admin')}}">Add Admin</a>
+                            <a class="nav-link" href="{{route('admin.manage')}}">Manage Admin</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

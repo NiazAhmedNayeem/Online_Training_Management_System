@@ -12,6 +12,8 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    private static $user;
+
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -58,4 +60,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public static function createAdmin($request)
+    {
+        self::$user = new User();
+        self::$user->name = $request->name;
+        self::$user->email = $request->email;
+        self::$user->password = bcrypt($request->password);
+        self::$user->save();
+    }
 }
