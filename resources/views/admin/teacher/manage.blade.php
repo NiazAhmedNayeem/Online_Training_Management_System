@@ -30,7 +30,7 @@
                                     <td>{{$teacher->mobile}}</td>
                                     <td><img src="{{asset($teacher->image)}}" alt="{{$teacher->title}}" height="50" width="70"/></td>
                                     <td>
-                                        <a href="" class="btn btn-outline-success">
+                                        <a href="{{route('edit.teacher', ['id' => $teacher->id])}}" class="btn btn-outline-success">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <a href="" class="btn btn-outline-danger" >

@@ -31,4 +31,30 @@ class Teacher extends Model
         self::$teacher->image = self::getImageUrl($request);
         self::$teacher->save();
     }
+    public static function updateTeacher($request, $id)
+    {
+        self::$teacher = Teacher::find($id);
+        if ($request->file('image'))
+        {
+            if (file_exists(self::$teacher->image))
+            {
+                unlink(self::$teacher->image);
+            }
+            self::$imageUrl = self::getImageUrl($request);
+        }
+        else
+        {
+            self::$imageUrl = self::$teacher->image;
+        }
+        self::$teacher->name = $request->name;
+        self::$teacher->email = $request->email;
+        self::$teacher->mobile = $request->mobile;
+        if ($request->password)
+        {
+            self::$teacher->password = bcrypt($request->password);
+        }
+        self::$teacher->address = $request->address;
+        self::$teacher->image = self::$imageUrl;
+        self::$teacher->save();
+    }
 }
