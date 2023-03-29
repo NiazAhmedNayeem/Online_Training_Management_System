@@ -9,6 +9,8 @@ use Session;
 
 class TrainingController extends Controller
 {
+    public $category;
+
     public function index()
     {
         return view('teacher.training.index', ['categories' => Category::where('status', 1)->get()]);
@@ -21,6 +23,10 @@ class TrainingController extends Controller
     public function manage()
     {
         return view('teacher.training.manage',['trainings' => Training::where('teacher_id', Session::get('teacher_id'))->orderBy('id', 'desc')->get()]);
+    }
+    public function detail($id)
+    {
+        return view('teacher.training.detail', ['training' => Training::find($id)]);
     }
     public function edit($id)
     {
