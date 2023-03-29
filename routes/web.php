@@ -66,6 +66,7 @@ Route::get('/teacher/logout', [TeacherAuthController::class, 'logout'])->name('t
 
 
 Route::get('/teacher/training', [TrainingController::class, 'index'])->name('teacher.training');
-Route::get('/teacher/create-training', [TrainingController::class, 'create'])->name('create.training');
+Route::post('/teacher/create-training', [TrainingController::class, 'create'])->name('create.training');
+Route::post('/teacher/manage-training', [TrainingController::class, 'manage'])->name('manage.training');
 
 });

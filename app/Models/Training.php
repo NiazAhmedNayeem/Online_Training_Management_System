@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Session;
 
 class Training extends Model
 {
@@ -24,6 +25,8 @@ class Training extends Model
     public static function createTraining($request)
     {
         self::$training = new Training();
+        self::$training->category_id = $request->category_id;
+        self::$training->teacher_id=  Session::get('teacher_id');
         self::$training->title = $request->title;
         self::$training->short_description = $request->short_description;
         self::$training->date = $request->date;
