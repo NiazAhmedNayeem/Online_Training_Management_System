@@ -35,4 +35,32 @@ class Training extends Model
         self::$training->image = self::getImageUrl($request);
         self::$training->save();
     }
+
+    public static function editTraining($request, $id)
+    {
+        self::$training = Training::find($id);
+        if ($request->file('image'))
+        {
+            if (file_exists(self::$training->image))
+            {
+                unlink(self::$training->image);
+            }
+            self::$imageUrl = self::getImageUrl($request);
+        }
+        else
+        {
+            return self::$imageUrl = self::$training->image;
+        }
+        self::$training->category_id = $request->category_id;
+        self::$training->teacher_id=  Session::get('teacher_id');
+        self::$training->title = $request->title;
+        self::$training->short_description = $request->short_description;
+        self::$training->date = $request->date;
+        self::$training->price = $request->price;
+        self::$training->long_description = $request->long_description;
+        self::$training->image = self::$imageUrl;
+        self::$training->save();
+    }
+
+
 }
