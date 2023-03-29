@@ -34,9 +34,12 @@
                                     <a href="{{route('edit.training', ['id' => $training->id])}}" class="btn btn-outline-success">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="{{route('delete.training', ['id' => $training->id])}}" class="btn btn-outline-danger" >
-                                        <i class="fa fa-trash"></i>
-                                    </a>
+                                    <form action="{{route('delete.training', ['id' => $training->id])}}" method="POST" onsubmit="myFunction()">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -46,6 +49,11 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
+    <script>
+        function myFunction() {
+            alert("Are you sure to delete..???");
+        }
+    </script>
 @endsection
 
 

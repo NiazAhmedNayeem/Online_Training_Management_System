@@ -31,4 +31,9 @@ class TrainingController extends Controller
         Training::editTraining($request, $id);
         return redirect('/teacher/manage-training')->with('message', 'Training update successfully.');
     }
+    public function delete($id)
+    {
+        Training::trainingDelete($id);
+        return redirect('/teacher/manage-training')->with('message', 'Training delete successfully.');
+    }
 }
