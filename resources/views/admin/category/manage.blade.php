@@ -34,9 +34,12 @@
                                     <a href="{{route('edit.category', ['id' => $category->id])}}" class="btn btn-outline-success">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="{{route('delete.category', ['id' => $category->id])}}" class="btn btn-outline-danger" >
-                                        <i class="fa fa-trash"></i>
-                                    </a>
+                                    <form action="{{route('delete.category', ['id' => $category->id])}}" method="POST" onsubmit="myFunction()">
+                                        @csrf
+                                        <button class="btn btn-outline-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -46,5 +49,10 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
+    <script>
+        function myFunction() {
+            alert("Are you sure to delete..???");
+        }
+    </script>
 @endsection
 

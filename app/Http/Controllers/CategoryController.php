@@ -20,4 +20,18 @@ class CategoryController extends Controller
     {
         return view('admin.category.manage', ['categories' => Category::orderBy('id', 'desc')->get()]);
     }
+    public function edit($id)
+    {
+        return view('admin.category.edit', ['category' => Category::find($id)]);
+    }
+    public function update(Request $request, $id)
+    {
+        Category::updateCategory($request, $id);
+        return redirect('/manage-category')->with('message', 'Category update successfully.');
+    }
+    public function delete($id)
+    {
+        Category::categoryDelete($id);
+        return redirect('/manage-category')->with('message', 'Category delete successfully.');
+    }
 }

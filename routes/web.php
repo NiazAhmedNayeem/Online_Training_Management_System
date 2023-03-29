@@ -45,10 +45,10 @@ Route::middleware(['login:sanctum',config('jetstream.auth_session'),'verified'])
     //Category section
     Route::get('/add-category', [CategoryController::class, 'index'])->name('add.category');
     Route::post('/add-category', [CategoryController::class, 'create'])->name('create.category');
+    Route::get('/manage-category', [CategoryController::class, 'manage'])->name('manage.category');
     Route::get('/edit-category/{id}', [CategoryController::class, 'edit'])->name('edit.category');
     Route::post('/update-category/{id}', [CategoryController::class, 'update'])->name('update.category');
     Route::post('/delete-category/{id}', [CategoryController::class, 'delete'])->name('delete.category');
-    Route::get('/manage-category', [CategoryController::class, 'manage'])->name('manage.category');
 
 
 });

@@ -46,6 +46,7 @@ class Teacher extends Model
         {
             self::$imageUrl = self::$teacher->image;
         }
+
         self::$teacher->name = $request->name;
         self::$teacher->email = $request->email;
         self::$teacher->mobile = $request->mobile;
