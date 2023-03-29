@@ -9,7 +9,7 @@ class AdminAuthController extends Controller
 {
     public function index()
     {
-        return view('admin.login.index');
+        return view('admin.auth.index');
     }
     public function create(Request $request)
     {
@@ -18,7 +18,7 @@ class AdminAuthController extends Controller
     }
     public function manage()
     {
-        return view('admin.login.manage', ['admins' => User::orderBy('id', 'desc')->get()]);
+        return view('admin.auth.manage', ['admins' => User::orderBy('id', 'desc')->get()]);
     }
 
 }

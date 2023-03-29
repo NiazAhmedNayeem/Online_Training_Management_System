@@ -6,6 +6,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,8 @@ use App\Http\Controllers\TeacherAuthController;
 
 Route::get('/', [WebsiteController::class, 'index'])->name('website.home');
 
+
+//Admin Section
 Route::middleware(['login:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -38,8 +42,15 @@ Route::middleware(['login:sanctum',config('jetstream.auth_session'),'verified'])
     Route::post('/delete-teacher/{id}', [TeacherController::class, 'delete'])->name('delete.teacher');
 
 
+    //Category section
+    Route::post('/add-category', [CategoryController::class, 'index'])->name('add.category');
+
+
 });
 
+
+
+//Teacher Section
 Route::get('/teacher/login', [TeacherAuthController::class, 'index'])->name('teacher.login');
 Route::post('/teacher/login', [TeacherAuthController::class, 'login'])->name('teacher.login');
 
@@ -47,5 +58,9 @@ Route::middleware(['teacher.auth'])->group(function () {
 
 Route::get('/teacher/dashboard', [TeacherAuthController::class, 'dashboard'])->name('teacher.dashboard');
 Route::get('/teacher/logout', [TeacherAuthController::class, 'logout'])->name('teacher.logout');
+
+
+Route::get('/teacher/training', [TrainingController::class, 'index'])->name('teacher.training');
+Route::get('/teacher/create-training', [TrainingController::class, 'create'])->name('create.training');
 
 });

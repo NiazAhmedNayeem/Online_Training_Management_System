@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('teacher.master')
 
 @section('title')
     Teacher Dashboard
