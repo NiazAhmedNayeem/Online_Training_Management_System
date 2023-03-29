@@ -17,11 +17,20 @@
                                         <form action="{{route('create.training')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-floating mb-3">
+                                                <label for="inputName">Category</label>
+                                                <select class="form-control" name="category_id">
+                                                    <option>------------------------- please select category -------------------</option>
+                                                    @foreach($categories as $category)
+                                                    <option value="{{$category->id}}"> {{$category->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-floating mb-3">
                                                 <input name="title" class="form-control" id="inputName" type="text" placeholder="Training Title" />
                                                 <label for="inputName">Training Title</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <textarea name="description" class="form-control" id="inputAddress1" type="text" placeholder="Short Description"></textarea>
+                                                <textarea name="short_description" class="form-control" id="inputAddress1" type="text" placeholder="Short Description"></textarea>
                                                 <label for="inputAddress1">Short Description</label>
                                             </div>
                                             <div class="form-floating mb-3">
@@ -41,7 +50,7 @@
                                                 <label for="inputImage">Image</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <button class="btn btn-primary" type="submit" >Create Teacher</button>
+                                                <button class="btn btn-primary" type="submit" >Create New Training</button>
                                             </div>
                                         </form>
                                     </div>
