@@ -15,10 +15,14 @@ class TrainingController extends Controller
     public function create(Request $request)
     {
         Training::createTraining($request);
-        return redirect('/teacher/training')->with('message', 'Training create successfully.');
+        return redirect('/teacher/manage-training')->with('message', 'Training create successfully.');
     }
     public function manage()
     {
-        return view('teacher.training.manage');
+        return view('teacher.training.manage',['trainings' => Training::orderBy('id', 'desc')->get()]);
+    }
+    public function edit($id)
+    {
+        return view('teacher.training.edit')
     }
 }

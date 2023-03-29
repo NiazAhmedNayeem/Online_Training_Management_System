@@ -67,6 +67,10 @@ Route::get('/teacher/logout', [TeacherAuthController::class, 'logout'])->name('t
 
 Route::get('/teacher/training', [TrainingController::class, 'index'])->name('teacher.training');
 Route::post('/teacher/create-training', [TrainingController::class, 'create'])->name('create.training');
-Route::post('/teacher/manage-training', [TrainingController::class, 'manage'])->name('manage.training');
+Route::get('/teacher/manage-training', [TrainingController::class, 'manage'])->name('manage.training');
+Route::get('/teacher/edit-training/{id}', [TrainingController::class, 'edit'])->name('edit.training');
+Route::post('/teacher/update-training/{id}', [TrainingController::class, 'update'])->name('update.training');
+Route::post('/teacher/delete-training/{id}', [TrainingController::class, 'delete'])->name('delete.training');
+
 
 });
