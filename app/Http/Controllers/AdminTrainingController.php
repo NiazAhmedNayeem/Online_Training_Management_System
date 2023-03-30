@@ -11,4 +11,10 @@ class AdminTrainingController extends Controller
     {
         return view('admin.training.index', ['trainings' => Training::orderBy('id', 'desc')->get()]);
     }
+
+
+    public function statusUpdate($id)
+    {
+        return redirect('/admin-training')->with('message', Training::trainingStatus($id));
+    }
 }

@@ -8,7 +8,7 @@ use Session;
 
 class Training extends Model
 {
-    private static $training, $image, $imageName, $imageUrl, $extension, $directory;
+    private static $training, $image, $imageName, $imageUrl, $extension, $directory, $message ;
 
     use HasFactory;
 
@@ -76,4 +76,20 @@ class Training extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public static function trainingStatus($id)
+    {
+        self::$training = Training::find($id);
+        if (self::$training->status == 1)
+        {
+            self::$training->status = 0;
+            self::$message = 'Course status info unpublished successfully.';
+        }
+        else
+        {
+            self::$training->status = 1;
+            self::$message = 'Course status info published successfully.';
+        }
+        self::$training->save();
+        return self::$message;
+    }
 }

@@ -38,7 +38,7 @@
                                     <a href="" class="btn btn-outline-success">
                                         <i class="fa fa-book-open"></i>
                                     </a>
-                                    <a href="" class="btn btn-outline-info">
+                                    <a href="{{route('training.status', ['id' => $training->id])}}" class="btn btn-outline-info">
                                         <i class="fa fa-arrow-up"></i>
                                     </a>
                                     <a href="" class="btn btn-outline-primary">

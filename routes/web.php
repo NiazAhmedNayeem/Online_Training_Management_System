@@ -55,6 +55,7 @@ Route::middleware(['login:sanctum',config('jetstream.auth_session'),'verified'])
 
     ///Training control section
     Route::get('/admin-training', [AdminTrainingController::class, 'index'])->name('admin.training');
+    Route::get('/status-update/{id}', [AdminTrainingController::class, 'statusUpdate'])->name('training.status');
 
 
 });
