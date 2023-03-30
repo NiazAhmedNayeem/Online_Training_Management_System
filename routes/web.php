@@ -8,6 +8,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminTrainingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,11 @@ Route::middleware(['login:sanctum',config('jetstream.auth_session'),'verified'])
     Route::get('/edit-category/{id}', [CategoryController::class, 'edit'])->name('edit.category');
     Route::post('/update-category/{id}', [CategoryController::class, 'update'])->name('update.category');
     Route::post('/delete-category/{id}', [CategoryController::class, 'delete'])->name('delete.category');
+
+
+
+    ///Training control section
+    Route::get('/admin-training', [AdminTrainingController::class, 'index'])->name('admin.training');
 
 
 });
