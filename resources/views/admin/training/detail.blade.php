@@ -47,7 +47,7 @@
                             </tr>
                         </table>
                         <div>
-                            <form action="{{route('delete.training', ['id' => $training->id])}}" method="POST" onsubmit="myFunction()">
+                            <form action="{{route('training.delete', ['id' => $training->id])}}" method="POST" onsubmit="myFunction()">
                                 @csrf
                                 <button type="submit" class="btn btn-outline-danger">
                                     <i class="fa fa-trash"></i>

@@ -21,4 +21,9 @@ class AdminTrainingController extends Controller
     {
         return redirect('/admin-training')->with('message', Training::trainingStatus($id));
     }
+    public function delete($id)
+    {
+        Training::deleteTraining($id);
+        return redirect('/admin-training')->with('message', 'Training delete successfully');
+    }
 }

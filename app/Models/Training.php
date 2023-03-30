@@ -96,4 +96,13 @@ class Training extends Model
         self::$training->save();
         return self::$message;
     }
+    public static function deleteTraining($id)
+    {
+        self::$training = Training::find($id);
+        if (file_exists(self::$training->image))
+            {
+                unlink(self::$training->image);
+            }
+        self::$training->delete();
+    }
 }

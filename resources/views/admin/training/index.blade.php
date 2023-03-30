@@ -34,19 +34,22 @@
                                 <td><img src="{{asset($training->image)}}" alt="{{$training->title}}" height="50" width="70"/></td>
                                 <td>{{$training->status == 1 ? 'Published' : 'Unpublished'}}</td>
                                 <td>{{$training->offer_status == 1 ? 'Published' : 'Unpublished'}}</td>
-                                <td>
-                                    <a href="{{route('admin.training.detail', ['id' => $training->id])}}" class="btn btn-outline-success">
+                                <td class="d-flex" >
+                                    <a href="{{route('admin.training.detail', ['id' => $training->id])}}" class="btn btn-outline-success m-1">
                                         <i class="fa fa-book-open"></i>
                                     </a>
-                                    <a href="{{route('training.status', ['id' => $training->id])}}" class="btn btn-outline-info">
+                                    <a href="{{route('training.status', ['id' => $training->id])}}" class="btn btn-outline-info m-1">
                                         <i class="fa fa-arrow-up"></i>
                                     </a>
-                                    <a href="" class="btn btn-outline-primary">
+                                    <a href="" class="btn btn-outline-primary m-1">
                                         <i class="fa fa-book-dead"></i>
                                     </a>
-                                    <a href="" class="btn btn-outline-danger" >
-                                        <i class="fa fa-trash"></i>
-                                    </a>
+                                    <form action="{{route('training.delete', ['id' => $training->id])}}" method="POST" onsubmit="myFunction()">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-danger m-1">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -56,4 +59,9 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
+    <script>
+        function myFunction() {
+            alert("Are you sure to delete..???");
+        }
+    </script>
 @endsection
