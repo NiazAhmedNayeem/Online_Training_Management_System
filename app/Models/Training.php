@@ -75,6 +75,10 @@ class Training extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function Teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
 
     public static function trainingStatus($id)
     {
@@ -82,12 +86,12 @@ class Training extends Model
         if (self::$training->status == 1)
         {
             self::$training->status = 0;
-            self::$message = 'Course status info unpublished successfully.';
+            self::$message = 'Training status info unpublished successfully.';
         }
         else
         {
             self::$training->status = 1;
-            self::$message = 'Course status info published successfully.';
+            self::$message = 'Training status info published successfully.';
         }
         self::$training->save();
         return self::$message;

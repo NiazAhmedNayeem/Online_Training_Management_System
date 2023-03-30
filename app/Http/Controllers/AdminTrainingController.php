@@ -11,6 +11,10 @@ class AdminTrainingController extends Controller
     {
         return view('admin.training.index', ['trainings' => Training::orderBy('id', 'desc')->get()]);
     }
+    public function detail($id)
+    {
+        return view('admin.training.detail', ['training' => Training::find($id)]);
+    }
 
 
     public function statusUpdate($id)

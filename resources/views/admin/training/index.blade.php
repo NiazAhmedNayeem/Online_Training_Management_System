@@ -35,7 +35,7 @@
                                 <td>{{$training->status == 1 ? 'Published' : 'Unpublished'}}</td>
                                 <td>{{$training->offer_status == 1 ? 'Published' : 'Unpublished'}}</td>
                                 <td>
-                                    <a href="" class="btn btn-outline-success">
+                                    <a href="{{route('admin.training.detail', ['id' => $training->id])}}" class="btn btn-outline-success">
                                         <i class="fa fa-book-open"></i>
                                     </a>
                                     <a href="{{route('training.status', ['id' => $training->id])}}" class="btn btn-outline-info">
