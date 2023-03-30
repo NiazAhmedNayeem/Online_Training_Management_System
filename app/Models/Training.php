@@ -71,5 +71,9 @@ class Training extends Model
         self::$training->delete();
     }
 
+    public function Category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
 }

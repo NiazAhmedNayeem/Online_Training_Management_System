@@ -15,7 +15,7 @@
                         <table class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <tr>
                                 <th>Training Category</th>
-                                <td>{{$training->category_id}}</td>
+                                <td>{{$training->category->name}}</td>
                             </tr>
                             <tr>
                                 <th>Training Name</th>
