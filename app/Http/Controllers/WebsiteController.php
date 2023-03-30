@@ -8,6 +8,6 @@ class WebsiteController extends Controller
 {
     public function index()
     {
-        return view('website.index');
+        return view('website.home.index');
     }
 }

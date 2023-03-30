@@ -19,7 +19,7 @@
                             </tr>
                             <tr>
                                 <th>Teacher Name</th>
-                                <td>{{$training->teacher->name}}</td>
+                                <td>{{$training->teacher->name.'('.$training->teacher->mobile.')'}}</td>
                             </tr>
                             <tr>
                                 <th>Training Name</th>

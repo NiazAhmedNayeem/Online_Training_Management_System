@@ -21,7 +21,12 @@ use App\Http\Controllers\AdminTrainingController;
 |
 */
 
-Route::get('/', [WebsiteController::class, 'index'])->name('website.home');
+Route::get('/', [WebsiteController::class, 'index'])->name('home');
+Route::get('/about', [WebsiteController::class, 'about'])->name('about');
+Route::get('/training-category', [WebsiteController::class, 'category'])->name('training-category');
+Route::get('/all-training', [WebsiteController::class, 'training'])->name('all-training');
+Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
+Route::get('/login-registration', [WebsiteController::class, 'auth'])->name('login-registration');
 
 
 //Admin Section
