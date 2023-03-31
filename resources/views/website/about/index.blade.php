@@ -1,7 +1,7 @@
 @extends('website.master')
 
 @section('title')
-    About OTMS Batch 17
+    About OTMS
 @endsection
 
 @section('body')
