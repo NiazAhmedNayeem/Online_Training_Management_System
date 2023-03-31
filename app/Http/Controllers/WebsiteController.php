@@ -26,5 +26,8 @@ class WebsiteController extends Controller
     {
         return view('website.contact.index');
     }
-
+    public function auth()
+    {
+        return view('website.auth.index');
+    }
 }
