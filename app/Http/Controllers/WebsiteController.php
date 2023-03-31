@@ -18,4 +18,9 @@ class WebsiteController extends Controller
     {
         return view('website.category.index');
     }
+    public function training()
+    {
+        return view('website.training.index');
+    }
+
 }
