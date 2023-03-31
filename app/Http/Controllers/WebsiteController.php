@@ -22,5 +22,9 @@ class WebsiteController extends Controller
     {
         return view('website.training.index');
     }
+    public function contact()
+    {
+        return view('website.contact.index');
+    }
 
 }
