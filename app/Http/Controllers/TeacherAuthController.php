@@ -17,19 +17,24 @@ class TeacherAuthController extends Controller
     public function login(Request $request)
     {
         $this->teacher = Teacher::where('email', $request->email)->first();
+
+
         if ($this->teacher)
         {
             if (password_verify($request->password, $this->teacher->password))
             {
                 Session::put('teacher_id', $this->teacher->id);
                 Session::put('teacher_name', $this->teacher->name);
+                Session::put('teacher_email', $this->teacher->email);
+                Session::put('teacher_mobile', $this->teacher->mobile);
+                Session::put('teacher_address', $this->teacher->address);
+                Session::put('teacher_image', $this->teacher->image);
 
                 return redirect('/teacher/dashboard');
             }
             else
             {
                 return redirect('/teacher/login')->with('message', 'Sorry..your password is not valid.');
-
             }
         }
         else
@@ -42,10 +47,19 @@ class TeacherAuthController extends Controller
     {
         return view('teacher.dashboard.index');
     }
+    public function profile_index()
+    {
+        return view('teacher.profile.index');
+    }
     public function logout()
     {
-        Session::forgate('teacher_id');
-        Session::forgate('teacher_name');
+        Session::forget('teacher_id');
+        Session::forget('teacher_name');
+        Session::forget('teacher_email');
+        Session::forget('teacher_mobile');
+        Session::forget('teacher_address');
+        Session::forget('teacher_image');
+
         return redirect('/teacher/login');
     }
 }

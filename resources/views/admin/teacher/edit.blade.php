@@ -29,10 +29,6 @@
                                                 <label for="inputPassword">Mobile</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input name="password" class="form-control" value="{{$teacher->password}}" id="inputPassword" type="password" placeholder="Password" />
-                                                <label for="inputPassword">Password</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
                                                 <textarea name="address" class="form-control" id="inputAddress" type="text" placeholder="Address">{{$teacher->address}}</textarea>
                                                 <label for="inputAddress">Address</label>
                                             </div>

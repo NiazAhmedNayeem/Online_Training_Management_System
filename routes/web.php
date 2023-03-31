@@ -76,7 +76,8 @@ Route::post('/teacher/login', [TeacherAuthController::class, 'login'])->name('te
 Route::middleware(['teacher.auth'])->group(function () {
 
 Route::get('/teacher/dashboard', [TeacherAuthController::class, 'dashboard'])->name('teacher.dashboard');
-Route::get('/teacher/logout', [TeacherAuthController::class, 'logout'])->name('teacher.logout');
+Route::get('/teacher/profile', [TeacherAuthController::class, 'profile_index'])->name('teacher.profile');
+Route::post('/teacher/logout', [TeacherAuthController::class, 'logout'])->name('teacher.logout');
 
 
 Route::get('/teacher/training', [TrainingController::class, 'index'])->name('teacher.training');
