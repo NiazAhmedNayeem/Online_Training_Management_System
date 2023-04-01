@@ -94,7 +94,9 @@
                                 Training Category
                             </a>
                             <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="{{route('training-category')}}">Category One</a>
+                                @foreach($categories as $category)
+                                <a class="dropdown-item" href="{{route('training-category', ['id' => $category->id])}}">{{$category->name}}</a>
+                                @endforeach
                             </div>
                         </li>
 

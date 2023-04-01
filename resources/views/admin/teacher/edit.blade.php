@@ -11,7 +11,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Teacher Register Form</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Teacher Edit Form</h3></div>
                                     <div class="card-body">
                                         <h5 class="text-center text-primary">{{Session::get('message')}}</h5>
                                         <form action="{{route('update.teacher', ['id' => $teacher->id])}}" method="POST" enctype="multipart/form-data">

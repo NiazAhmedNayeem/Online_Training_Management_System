@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Training;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
@@ -14,9 +16,9 @@ class WebsiteController extends Controller
     {
         return view('website.about.index');
     }
-    public function category()
+    public function category($id)
     {
-        return view('website.category.index');
+        return view('website.category.index', ['category' => Category::find($id)]);
     }
     public function training()
     {

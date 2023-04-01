@@ -58,4 +58,8 @@ class Category extends Model
         }
         self::$category->delete();
     }
+    public function trainings()
+    {
+        return $this->hasMany(Training::class);
+    }
 }
