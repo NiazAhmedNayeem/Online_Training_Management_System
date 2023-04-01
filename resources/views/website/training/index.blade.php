@@ -10,34 +10,24 @@
     <section class="section">
         <div class="container">
             <div class="row">
+
                 <!-- service item -->
+                @foreach($trainings as $training)
                 <div class="col-lg-4 col-sm-6 mb-5">
                     <div class="card text-center">
                         <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="{{asset('/')}}website/images/service/service-1.jpg" alt="service-image">
+                            <img class="card-img-top rounded-0" src="{{asset($training->image)}}" alt="service-image">
                         </div>
                         <div class="card-body p-0">
-                            <h4 class="card-title pt-3">Business Consulting</h4>
-                            <p class="card-text mx-2 mb-0">Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim veniam
-                                quis nostrud.</p>
+                            <h4 class="card-title pt-3">{{$training->title}}</h4>
+                            <h4 class="card-title pt-3">Price: {{$training->price}}/- Tk</h4>
+                            <p class="card-text mx-2 mb-0">{{$training->short_description}}</p>
                             <a href="service-single.html" class="btn btn-secondary translateY-25">Read More</a>
                         </div>
                     </div>
                 </div>
-                <!-- service item -->
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <div class="card text-center">
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="{{asset('/')}}website/images/service/service-2.jpg" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <h4 class="card-title pt-3">name</h4>
-                            <p class="card-text mx-2 mb-0">Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim veniam
-                                quis nostrud.</p>
-                            <a href="service-single.html" class="btn btn-secondary translateY-25">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>

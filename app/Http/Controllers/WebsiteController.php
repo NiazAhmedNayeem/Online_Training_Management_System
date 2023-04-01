@@ -22,7 +22,7 @@ class WebsiteController extends Controller
     }
     public function training()
     {
-        return view('website.training.index');
+        return view('website.training.index', ['trainings' => Training::where('status', 1)->orderBy('id', 'desc')->get()]);
     }
     public function contact()
     {
