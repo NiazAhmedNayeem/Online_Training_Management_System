@@ -24,6 +24,10 @@ class WebsiteController extends Controller
     {
         return view('website.training.index', ['trainings' => Training::where('status', 1)->orderBy('id', 'desc')->get()]);
     }
+    public function trainingDetail($id)
+    {
+        return view('website.training.detail', ['training' => Training::find($id)]);
+    }
     public function contact()
     {
         return view('website.contact.index');

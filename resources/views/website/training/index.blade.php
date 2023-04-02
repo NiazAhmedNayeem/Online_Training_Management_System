@@ -22,7 +22,7 @@
                             <h4 class="card-title pt-3">{{$training->title}}</h4>
                             <h4 class="card-title pt-3">Price: {{$training->price}}/- Tk</h4>
                             <p class="card-text mx-2 mb-0">{{$training->short_description}}</p>
-                            <a href="service-single.html" class="btn btn-secondary translateY-25">Read More</a>
+                            <a href="{{route('training.detail', ['id' => $training->id])}}" class="btn btn-secondary translateY-25">Read More</a>
                         </div>
                     </div>
                 </div>
