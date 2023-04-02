@@ -28,6 +28,10 @@ class WebsiteController extends Controller
     {
         return view('website.training.detail', ['training' => Training::find($id)]);
     }
+    public function trainingEnroll()
+    {
+        return view('website.enroll.index');
+    }
     public function contact()
     {
         return view('website.contact.index');

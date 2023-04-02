@@ -26,6 +26,7 @@ Route::get('/about', [WebsiteController::class, 'about'])->name('about');
 Route::get('/training-category{id}', [WebsiteController::class, 'category'])->name('training-category');
 Route::get('/all-training', [WebsiteController::class, 'training'])->name('all-training');
 Route::get('/training-detail/{id}', [WebsiteController::class, 'trainingDetail'])->name('training.detail');
+Route::get('/enroll-training/{id}', [WebsiteController::class, 'trainingEnroll'])->name('training.enroll');
 Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
 Route::get('/login-registration', [WebsiteController::class, 'auth'])->name('login-registration');
 

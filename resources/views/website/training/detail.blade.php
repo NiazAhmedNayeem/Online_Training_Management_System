@@ -56,7 +56,7 @@
                             <div class="row mb-3">
                                 <label class="col-md-3"></label>
                                 <div class="col-md-9">
-                                    <a href="" class="btn btn-info shadow">Enroll Now</a>
+                                    <a href="{{route('training.enroll', ['id' => $training->id])}}" class="btn btn-info shadow">Enroll Now</a>
                                 </div>
                             </div>
 
